@@ -1,9 +1,7 @@
+.venv/
 __pycache__/
 *.pyc
+data/cricsheet/
+storage/
 .env
-.venv/
-node_modules/
-storage/videos/*
-storage/frames/*
-data/cricsheet/*
-!**/.gitkeep
+*.db
