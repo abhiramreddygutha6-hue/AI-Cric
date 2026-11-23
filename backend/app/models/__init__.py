@@ -57,6 +57,7 @@ class Delivery(Base):
     innings: Mapped[int] = mapped_column(Integer)
     over_no: Mapped[int] = mapped_column(Integer)          # 0-based
     ball_no: Mapped[int] = mapped_column(Integer)          # position within over
+    batting_team_id: Mapped[Optional[int]] = mapped_column(ForeignKey("teams.id"), index=True)
     bowler_id: Mapped[int] = mapped_column(ForeignKey("players.id"), index=True)
     batter_id: Mapped[int] = mapped_column(ForeignKey("players.id"), index=True)
     non_striker_id: Mapped[Optional[int]] = mapped_column(ForeignKey("players.id"))

@@ -1,0 +1,7 @@
+innings,batting_team,over,ball,bowler,batter,non_striker,runs_batter,runs_extras,extra_type,wicket_kind,player_out
+1,Team A,1,1,Bowler One,Batter One,Batter Two,1,0,,,
+1,Team A,1,2,Bowler One,Batter Two,Batter One,0,1,wides,,
+1,Team A,1,3,Bowler One,Batter Two,Batter One,4,0,,,
+1,Team A,1,4,Bowler One,Batter Two,Batter One,0,0,,bowled,Batter Two
+1,Team A,2,1,Bowler Two,Batter Three,Batter One,2,0,,,
+2,Team B,1,1,Bowler Three,Batter Four,Batter Five,6,0,,,

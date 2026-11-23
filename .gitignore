@@ -5,3 +5,5 @@ data/cricsheet/
 storage/
 .env
 *.db
+*.db
+~$*

@@ -32,3 +32,13 @@ pytest tests
 
 ## Schedule
 See the 18-week plan. Week 1 = setup, design, schema, data exploration.
+
+## Week 2: import data and use the API
+Cricsheet files go in `data/cricsheet/`. Reset the DB once if you ran Week 1 (a column was added):
+```bash
+docker compose down -v && docker compose up --build -d
+docker compose exec backend python -m app.cli_import /data/cricsheet --limit 200   # drop --limit for everything
+```
+Then open http://localhost:8000/docs and try `GET /matches`, `GET /matches/{id}`, `GET /players?search=kohli`, `GET /teams`.
+
+Upload your own match: `POST /import/scorecard` with a CSV (see `docs/sample_scorecard.csv`; `over` starts at 1) plus team1, team2 and match_date.
