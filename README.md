@@ -58,3 +58,13 @@ Upload your own match: `POST /import/scorecard` with a CSV (see `docs/sample_sco
 - `GET /matchups?bowler_id=&batter_id=`: head-to-head, overall and by phase.
 - `GET /matchups/bowler/{id}` and `GET /matchups/batter/{id}`: how each opponent has fared (`min_balls`, `sort`, `limit`).
 - Rankings are cached for 5 minutes and cleared after a scorecard upload. After using the CLI importer, restart the server.
+
+## Week 5: dashboard (React)
+Needs Node.js 20 or newer. With the backend running on port 8000:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open http://localhost:5173. Pages: Dashboard, Rankings (filters: bowlers/batters, phase, season, min balls), Players (search), player detail (stats, phase charts, matchups), Matches and match detail, Upload (scorecard CSV).
+The dev server forwards `/api/...` to the backend, so there is no CORS setup. The AI chat panel is added in Week 6.
