@@ -42,3 +42,10 @@ docker compose exec backend python -m app.cli_import /data/cricsheet --limit 200
 Then open http://localhost:8000/docs and try `GET /matches`, `GET /matches/{id}`, `GET /players?search=kohli`, `GET /teams`.
 
 Upload your own match: `POST /import/scorecard` with a CSV (see `docs/sample_scorecard.csv`; `over` starts at 1) plus team1, team2 and match_date.
+
+## Week 3: stats endpoints
+- `GET /stats/bowlers/{player_id}`: balls, overs, runs, wickets, economy, average, strike rate, dot-ball %, boundary %, plus a `by_phase` split.
+- `GET /stats/batters/{player_id}`: innings, runs, average, strike rate, dot-ball %, boundary %, 4s/6s, highest score, 50s/100s, dismissals by kind, plus `by_phase`.
+- Optional filters on both: `phase` (powerplay/middle/death), `tournament`, `season` (year).
+- Find a player id with `GET /players?search=bumrah`.
+- Scoring rules are documented at the top of `backend/app/services/stats.py`.
