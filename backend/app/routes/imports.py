@@ -4,6 +4,7 @@ from datetime import date
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from sqlalchemy.orm import Session
 from app.database import get_db
+from app.services import cache
 from app.services.importer import Cache, save_parsed_match
 from app.services.scorecard import csv_rows_to_match
 
@@ -36,6 +37,7 @@ async def import_scorecard(
             db.rollback()
             raise HTTPException(409, "this match was already imported")
         db.commit()
+        cache.clear()
     except ValueError as e:
         db.rollback()
         raise HTTPException(400, str(e))

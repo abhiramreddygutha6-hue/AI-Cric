@@ -49,3 +49,12 @@ Upload your own match: `POST /import/scorecard` with a CSV (see `docs/sample_sco
 - Optional filters on both: `phase` (powerplay/middle/death), `tournament`, `season` (year).
 - Find a player id with `GET /players?search=bumrah`.
 - Scoring rules are documented at the top of `backend/app/services/stats.py`.
+
+## Week 4: rankings and matchups
+- `GET /rankings/bowlers` and `GET /rankings/batters`: efficiency score (0-100) with per-metric components. Options: `min_balls` (default 120), `limit`, `phase`, `tournament`, `season`.
+  - Bowler score: economy 35%, strike rate 25%, dot-ball % 25%, boundary % 15%.
+  - Batter score: strike rate 30%, average 30%, boundary % 20%, dot-ball % 20% (lower is better).
+  - Each metric is a percentile rank among qualified players, so a score is relative to the pool the filters create.
+- `GET /matchups?bowler_id=&batter_id=`: head-to-head, overall and by phase.
+- `GET /matchups/bowler/{id}` and `GET /matchups/batter/{id}`: how each opponent has fared (`min_balls`, `sort`, `limit`).
+- Rankings are cached for 5 minutes and cleared after a scorecard upload. After using the CLI importer, restart the server.
