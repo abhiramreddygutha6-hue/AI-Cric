@@ -1,4 +1,5 @@
 import { Link, NavLink, Outlet } from 'react-router-dom'
+import ChatPanel from './ChatPanel.jsx'
 import Logo from './Logo.jsx'
 
 const links = [
@@ -27,6 +28,7 @@ export default function Layout() {
       <main className="container">
         <Outlet />
       </main>
+      <ChatPanel />
     </>
   )
 }

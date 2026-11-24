@@ -10,3 +10,4 @@ storage/
 *.db
 ~$*
 dist/
+node_modules/

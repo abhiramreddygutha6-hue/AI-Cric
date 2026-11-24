@@ -70,3 +70,10 @@ npm run dev
 ```
 Open http://localhost:5173. Pages: Dashboard, Rankings (filters: bowlers/batters, phase, season, min balls), Players (search), player detail (stats, phase charts, matchups), Matches and match detail, Upload (scorecard CSV).
 The dev server forwards `/api/...` to the backend, so there is no CORS setup. The AI chat panel is added in Week 6.
+
+## Week 6: AI assistant
+- Backend: `POST /chat` runs a Claude model with five tools (find player, bowler stats, batter stats, matchup, top players), so every number comes from your database.
+- Frontend: the "Ask AiCric" button on every page opens the chat panel.
+- Setup: `python -m pip install anthropic`, then in the terminal that runs the backend, before starting it:
+  `$env:ANTHROPIC_API_KEY = "your-key"` (get a key at console.anthropic.com). Optional: `$env:ANTHROPIC_MODEL` to pick another model.
+- Never commit your key. Keep it out of files in the repo.

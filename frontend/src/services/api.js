@@ -23,6 +23,8 @@ async function request(path, options) {
 export const api = {
   get: (path) => request(path),
   upload: (path, formData) => request(path, { method: 'POST', body: formData }),
+  post: (path, body) =>
+    request(path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }),
 }
 
 // Build a query string, skipping empty values: qs({a: 1, b: ''}) -> "?a=1"

@@ -111,3 +111,19 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
 .list { list-style: none; padding: 0; margin: 0; columns: 2 220px; }
 .list li { padding: 0.25rem 0; }
 .pager { display: flex; gap: 1rem; align-items: center; justify-content: space-between; margin-top: 0.9rem; }
+
+/* assistant */
+.chat-fab { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 20; background: var(--ball); border-color: var(--ball); color: #fff; padding: 0.7rem 1.2rem; border-radius: 999px; font-weight: 600; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); }
+.chat-fab:hover:not(:disabled) { border-color: var(--ball); filter: brightness(1.08); }
+.chat { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 20; width: min(400px, calc(100vw - 2rem)); height: min(560px, 75vh); display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3); overflow: hidden; }
+.chat-head { display: flex; justify-content: space-between; align-items: center; background: var(--turf); color: var(--on-turf); padding: 0.6rem 0.9rem; font-family: var(--display); font-size: 1.25rem; }
+.chat-head button { background: transparent; color: var(--on-turf); border-color: transparent; padding: 0.2rem 0.5rem; }
+.chat-body { flex: 1; overflow-y: auto; padding: 0.9rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.chat-starter { display: block; width: 100%; text-align: left; margin-top: 0.45rem; background: var(--chalk); }
+.bubble { padding: 0.55rem 0.8rem; border-radius: 8px; max-width: 92%; white-space: pre-wrap; font-size: 0.93rem; }
+.bubble.user { align-self: flex-end; background: var(--turf); color: var(--on-turf); }
+.bubble.assistant { align-self: flex-start; background: var(--chalk); border: 1px solid var(--line); }
+.bubble-note { margin-top: 0.4rem; font-size: 0.78rem; color: var(--muted); }
+.chat-form { display: flex; gap: 0.5rem; padding: 0.7rem; border-top: 1px solid var(--line); }
+.chat-form input { flex: 1; min-width: 0; }
+.chat-form button[type='submit'] { background: var(--ball); border-color: var(--ball); color: #fff; }
