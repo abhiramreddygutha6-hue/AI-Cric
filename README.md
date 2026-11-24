@@ -1,4 +1,6 @@
-# CRICKET-IQ
+<img src="frontend/public/aicric-logo.png" alt="AiCric logo" width="96" align="left">
+
+# AiCric
 
 Cricket analytics system: bowling, batting and fielding analysis from scorecard data and match video, with an AI assistant that suggests plans for upcoming matches and tournaments.
 
