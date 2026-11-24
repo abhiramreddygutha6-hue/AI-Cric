@@ -37,7 +37,8 @@ code { background: var(--line); padding: 0 4px; border-radius: 3px; }
 /* header */
 .topbar { background: var(--turf); color: var(--on-turf); }
 .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 0.7rem 1rem 0; display: flex; align-items: flex-end; gap: 2rem; flex-wrap: wrap; }
-.brand { font-family: var(--display); font-weight: 700; font-size: 1.7rem; line-height: 1; padding-bottom: 0.55rem; }
+.brand { display: flex; align-items: center; gap: 0.5rem; font-family: var(--display); font-weight: 700; font-size: 1.9rem; line-height: 1; padding-bottom: 0.45rem; color: var(--on-turf); text-decoration: none; }
+.brand:hover { color: var(--on-turf); }
 nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
 nav a { color: var(--on-turf); opacity: 0.75; text-decoration: none; padding: 0.55rem 0 0.5rem; border-bottom: 3px solid transparent; font-weight: 500; }
 nav a:hover { opacity: 1; color: var(--on-turf); }

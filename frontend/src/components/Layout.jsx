@@ -1,4 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
+import Logo from './Logo.jsx'
 
 const links = [
   ['/', 'Dashboard'],
@@ -13,7 +14,7 @@ export default function Layout() {
     <>
       <header className="topbar">
         <div className="topbar-inner">
-          <span className="brand">CRICKET-IQ</span>
+          <Link to="/" className="brand"><Logo /><span>AiCric</span></Link>
           <nav>
             {links.map(([to, label]) => (
               <NavLink key={to} to={to} end={to === '/'} className={({ isActive }) => (isActive ? 'active' : '')}>

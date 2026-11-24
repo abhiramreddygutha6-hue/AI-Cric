@@ -1,4 +1,4 @@
-# CRICKET-IQ: Features and User Flows (Week 1)
+# AiCric: Features and User Flows (Week 1)
 
 ## Users
 Coach or analyst of one team preparing for a tournament.

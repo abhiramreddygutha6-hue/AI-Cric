@@ -11,7 +11,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="CRICKET-IQ API", version="0.4.0", lifespan=lifespan)
+app = FastAPI(title="AiCric API", version="0.4.0", lifespan=lifespan)
 app.include_router(teams.router)
 app.include_router(players.router)
 app.include_router(matches.router)
